@@ -11,3 +11,6 @@ Nightwatch JS Project
 
 # Install Nightwacth
 1. npm install nightwatch --save -dev
+
+# Install Chromedriver
+1. npm install chromedriver --save-dev

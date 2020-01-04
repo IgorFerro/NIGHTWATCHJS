@@ -14,3 +14,9 @@ Nightwatch JS Project
 
 # Install Chromedriver
 1. npm install chromedriver --save-dev
+
+# Install Babel for transpilation
+1. npm install babel-cli --save-dev
+2. npm install babel-cli -g
+3. npm install babel-preset-es2015
+4. npm install babel-plugin-add-module-exports --save-dev

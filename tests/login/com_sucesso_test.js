@@ -4,14 +4,7 @@ module.exports = {
         let login = browser.page.login()
         let sidebar = browser.page.sidebar()
         
-        login.navigate()
-        .waitForElementVisible('@form', 3000)
-        .setValue('@emailInput','zumbi@dospalmares.com.br')
-        .setValue('@passInput','pwd123')
-        .click('@loginButton')
-
-        sidebar
-        .waitForElementVisible('@userInfo', 3000)
-        .assert.containsText('@userInfo', 'Quilombo')
+        login.with('zumbi@dospalmares.com.br','pwd123')
+        sidebar.expectLoggedUser('Quilombo')
   }
 }

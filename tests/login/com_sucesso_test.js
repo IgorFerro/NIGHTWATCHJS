@@ -3,8 +3,7 @@ module.exports = {
         
         let login = browser.page.login()
         let sidebar = browser.page.sidebar()
-
-        browser.maximizeWindow()
+        
         login.navigate()
         .waitForElementVisible('@form', 3000)
         .setValue('@emailInput','zumbi@dospalmares.com.br')
@@ -14,6 +13,5 @@ module.exports = {
         sidebar
         .waitForElementVisible('@userInfo', 3000)
         .assert.containsText('@userInfo', 'Quilombo')
-        .end();
   }
 }

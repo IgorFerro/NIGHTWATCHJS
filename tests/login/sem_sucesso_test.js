@@ -1,12 +1,6 @@
 module.exports = {
    
-  before:(browser) =>{
-    browser.maximizeWindow()
-  },
 
-  after:(browser) =>{
-    browser.end();
-  },
 
   //'@disabled':true,
   

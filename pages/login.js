@@ -9,9 +9,6 @@ var loginActions = {
     }
 }
 
-
-
-
 module.exports ={
 url: 'http://zombie-web:5000/login',
 commands:[loginActions],

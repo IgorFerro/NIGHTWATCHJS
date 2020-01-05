@@ -35,7 +35,13 @@ module.exports ={
      .setValue('@plotInput',movieData.plot)
      .click('@createButton')
      .pause(10000)
-     
+ },
+
+    'then i will see the movie in the list': function (browser){
+    let movie = browser.page.movie();
+    movie
+     .waitForElementVisible('@list' , 5000)
+     .assert.containsText('@list', movieData.title)
 
     }
 }

@@ -3,7 +3,7 @@ require('babel-core/register');
 const chromedriver = require('chromedriver');
 
 module.exports = {
-    src_folders: ['tests'],
+    src_folders: ['tests/register'],
 
     page_objects_path: './pages',
     globals_path:'./hooks/globals.js',

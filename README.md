@@ -20,3 +20,6 @@ Nightwatch JS Project
 2. npm install babel-cli -g
 3. npm install babel-preset-es2015
 4. npm install babel-plugin-add-module-exports --save-dev
+
+# Install Postgres
+1. npm install pg --save-dev

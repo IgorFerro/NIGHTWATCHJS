@@ -1,5 +1,5 @@
-
-let movieData = [];
+import pg from '../../lib/db'
+let movieData = {}
 module.exports ={
 
     before : function(browser){
@@ -13,6 +13,8 @@ module.exports ={
             plot:'O enredo de Resident Evil inicia em torno de uma série de casos de homicídio envolvendo canibalismo ocorridos em Arklay Mountain (Montanhas Arklay)', 
     }
 
+    pg.removeByTitle(movieData.title)
+
     let login = browser.page.login()
     let sidebar = browser.page.sidebar()
     
@@ -24,10 +26,16 @@ module.exports ={
      let movie = browser.page.movie();
      
      movie
-     .click('@addButton')
-     .waitForElementVisible('@movieForm', 3000)
+     .createForm()
      .setValue('@titleInput',movieData.title)
-     .pause(5000)
+     .selectStatus(movieData.status)
+     .setValue('@yearInput',movieData.year)
+     .setValue('@dateInput',movieData.releaseDate)
+     .insertCast(movieData.cast)
+     .setValue('@plotInput',movieData.plot)
+     .click('@createButton')
+     .pause(10000)
+     
 
     }
 }

@@ -1,8 +1,15 @@
 module.exports = {
+   
+  before:(browser) =>{
+    browser.maximizeWindow()
+  },
+
+  after:(browser) =>{
+    browser.end();
+  },
     'invalid password': (browser) => {
         let alert = '.alert-danger'
         browser
-        .maximizeWindow()
         .url('http://zombie-web:5000/login')
         .waitForElementVisible('.card-login', 3000)
         .setValue('input[name=email]','zumbi@dospalmares.com.br')
@@ -14,7 +21,6 @@ module.exports = {
   'user not registered': (browser) =>{
     let alert = '.alert-danger'
         browser
-        .maximizeWindow()
         .url('http://zombie-web:5000/login')
         .waitForElementVisible('.card-login', 3000)
         .setValue('input[name=email]','404@yahoo.com')
@@ -26,7 +32,6 @@ module.exports = {
   'email not filed': (browser) => {
     let alert = '.alert-info'
         browser
-        .maximizeWindow()
         .url('http://zombie-web:5000/login')
         .waitForElementVisible('.card-login', 3000)
         .setValue('input[name=email]','')
@@ -38,7 +43,6 @@ module.exports = {
   'password not filed': (browser) => {
     let alert = '.alert-info'
         browser
-        .maximizeWindow()
         .url('http://zombie-web:5000/login')
         .waitForElementVisible('.card-login', 3000)
         .setValue('input[name=email]','123@yahoo.com')
@@ -46,7 +50,6 @@ module.exports = {
         .click('.login-button')
         .waitForElementVisible(alert, 3000)
         .assert.containsText(alert, 'Opps. Cadê a senha?')
-        .end();
   }
 
 }

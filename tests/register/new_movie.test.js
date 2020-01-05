@@ -33,8 +33,10 @@ module.exports ={
      .setValue('@dateInput',movieData.releaseDate)
      .insertCast(movieData.cast)
      .setValue('@plotInput',movieData.plot)
+     .uploadCover(movieData.cover)
+     .pause(5000)
      .click('@createButton')
-     .pause(10000)
+     .pause(5000)
  },
 
     'then i will see the movie in the list': function (browser){

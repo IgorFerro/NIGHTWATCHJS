@@ -4,6 +4,10 @@
   "description": "Nightwatch with javascript",
   "main": "index.js",
   "scripts": {
+    "test:login": ".\\node_modules\\.bin\\nightwatch.cmd --group login",
+    "test:nologin": ".\\node_modules\\.bin\\nightwatch.cmd --skipgroup login",
+    "test:smoke": ".\\node_modules\\.bin\\nightwatch.cmd --tag smoke",
+    "test:notag": ".\\node_modules\\.bin\\nightwatch.cmd --skiptags smoke,404",
     "test": ".\\node_modules\\.bin\\nightwatch.cmd"
   },
   "repository": {

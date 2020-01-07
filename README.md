@@ -23,3 +23,7 @@ Nightwatch JS Project
 
 # Install Postgres
 1. npm install pg --save-dev
+
+# Run tests by group
+1. npm run test:login
+2. npm run test:smoke (by tags)

@@ -1,6 +1,10 @@
 require('babel-core/register');
 
 const chromedriver = require('chromedriver');
+require('geckodriver');
+
+const testUrl = 'http://zombie-web:5000/'
+const defaultTimeout = 15000
 
 module.exports = {
     src_folders: ['tests/search'],
@@ -10,23 +14,65 @@ module.exports = {
 
     webdriver: {
         start_process: true,
-        server_path: chromedriver.path,
-        port: 9515
     },
 
-    test_workers:{
+   /* test_workers:{
       enable: true,
       workers: 2
-    },
+    },*/
 
     test_settings: {
         default: {
+          launch_url: testUrl,
           globals:{
-          waitForConditionTimeout: 15000
+          waitForConditionTimeout: defaultTimeout
+          },
+          webdriver:{
+            server_path: chromedriver.path,
+            port: 9515
           },
             desiredCapabilities: {
                 browserName: "chrome"
             }
+        },
+
+        headless:{
+          launch_url: testUrl,
+          globals:{
+          waitForConditionTimeout: defaultTimeout
+          },
+          webdriver:{
+            server_path: chromedriver.path,
+            port: 9515
+          },
+            desiredCapabilities: {
+                browserName: "chrome",
+                chromeOptions:{
+                  w3c: false,
+                  args:['--headless','--no-sandbox']
+                }
+            }
+
+        },
+
+        firefox: {
+          launch_url: testUrl,
+          globals:{
+          waitForConditionTimeout: defaultTimeout
+          },
+          webdriver:{
+            server_path: '.\\node_modules\\.bin\\geckodriver.cmd',
+            port: 4444
+          },
+            desiredCapabilities: {
+                browserName: "firefox",
+                acceptInsecureCerts: true
+            }
+
+        },
+
+        stage:{
+          launch_url:"http://stage.zombie-web:5000/"
         }
     }
 }

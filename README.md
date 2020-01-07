@@ -27,3 +27,6 @@ Nightwatch JS Project
 # Run tests by group
 1. npm run test:login
 2. npm run test:smoke (by tags)
+
+# Install Geckdriver
+1. npm install geckodriver --save-dev

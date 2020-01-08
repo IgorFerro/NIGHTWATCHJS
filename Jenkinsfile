@@ -1,5 +1,6 @@
 pipeline {
     agent {
+        sudo service docker restart
         docker {image "node"}
     }
     stages {

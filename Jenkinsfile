@@ -4,8 +4,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-             steps {
-         sh  "ping registry.npmjs"      
+             steps {   
          sh "npm install"
         }
 

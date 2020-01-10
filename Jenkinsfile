@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {image "217306aaaa/node-wd"
+        docker {image "qaninja/node-wd"
                 args "--network=skynet"
                }
     }

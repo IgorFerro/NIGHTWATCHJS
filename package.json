@@ -11,7 +11,7 @@
     "test:notag": ".\\node_modules\\.bin\\nightwatch.cmd --skiptags smoke,404",
     "stage:smoke": ".\\node_modules\\.bin\\nightwatch.cmd --tag smoke --env=stage",
     "test": ".\\node_modules\\.bin\\nightwatch.cmd",
-    "test:ci":"./node_modules/.bin/nightwatch --tag smoke --env=headless"
+    "test:ci": "./node_modules/.bin/nightwatch --tag smoke --env=headless"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/IgorFerro/NIGHTWATCHJS#readme",
   "dependencies": {
+    "chromium": "^2.1.1",
     "express": "^4.17.1",
     "nightwatch": "^1.3.2"
   },

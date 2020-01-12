@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {image "qaninja/node-wd"
+        docker {image "217306aaaa/node-wd"
                }
     }
     stages {
